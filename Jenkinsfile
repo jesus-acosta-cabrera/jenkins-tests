@@ -1,4 +1,3 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any // could be a node if any, it runs with whatever is available
 
