@@ -5,6 +5,7 @@ pipeline {
         stage('Build') { // basically they are steps
             steps {
                 echo 'Building the docker image...'
+                echo 'Application built'
             }
         }
         stage('Test') {
