@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.541.1-lts
+FROM jenkins/inbound-agent:latest
 USER root
 RUN apt update
 RUN apt install ca-certificates curl
