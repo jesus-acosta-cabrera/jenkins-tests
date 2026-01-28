@@ -5,7 +5,10 @@ pipeline {
         stage('Build') { // basically they are steps
             steps {
                 echo 'Testing dockerfile build'
-                sh 'docker build -t jenkins-test:test-1 .'
+                def dockerEnv = docker.build 'jenkins-test:snapshot'
+                dockerEnv.inside {
+                    sh 'echo ¡Hello from the ubuntu!'
+                }
             }
         }
         stage('Test') {
