@@ -1,12 +1,13 @@
 pipeline {
     agent {
-        dockerFile true
+        dockerfile true
     }
 
     stages {
         stage('Build') { // basically they are steps
             steps {
                 echo 'Testing dockerfile build'
+                sh 'echo variable1 = $variable1'
             }
         }
         stage('Test') {
