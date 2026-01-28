@@ -1,15 +1,11 @@
 pipeline {
-    agent {
-        dockerfile {
-            label 'recent'
-        }
-    }
+    agent any
 
     stages {
         stage('Build') { // basically they are steps
             steps {
                 echo 'Testing dockerfile build'
-                sh 'echo variable1 = $variable1'
+                sh 'docker build -t jenkins-test:test-1 .'
             }
         }
         stage('Test') {
